@@ -1,0 +1,34 @@
+name: build
+
+on:
+  push:
+
+env:
+  OWNER: ${{ github.repository_owner }}
+
+jobs:
+  build:
+    runs-on: linux-latest
+
+    env:
+      FILE: baget
+      IMAGE: ghcr.io/${{ github.repository_owner }}/baget
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: docker-config
+        uses: renovatebot/internal-tools@v1.2.21
+        with:
+          command: docker-config
+
+      - name: Build image
+        run: docker buildx bake --progress plain test
+
+      - name: Log into registry
+        if: github.ref == 'refs/heads/master'
+        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u viceice --password-stdin
+
+      - name: Publish the Docker image
+        if: github.ref == 'refs/heads/master'
+        run: docker buildx bake build
