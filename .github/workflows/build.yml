@@ -8,7 +8,7 @@ env:
 
 jobs:
   build:
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
 
     env:
       FILE: baget
