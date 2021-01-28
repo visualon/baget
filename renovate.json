@@ -5,6 +5,10 @@
     {
       "updateTypes": ["patch", "digest"],
       "automerge": true
+    },
+    {
+      "updateTypes": ["major"],
+      "dependencyDashboardApproval": true
     }
   ]
 }
