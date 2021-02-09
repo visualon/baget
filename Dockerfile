@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/dotnet/aspnet:3.1.11@sha256:4cd975f496e3ab92bf5ce8a73a382f0ad16d72b570b44a37b5c16e1af9e3890e AS base
+FROM mcr.microsoft.com/dotnet/aspnet:3.1.11@sha256:c94e369153b15293486b11c7a2b6f8e3fe27fdc479cd355ba54b9183fdf89aa4 AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:3.1.405@sha256:f7bc4a555fef18101b64bc7b954738489349d53655731ef8254f4d4619a9230c AS build
+FROM mcr.microsoft.com/dotnet/sdk:3.1.405@sha256:d27da1b416478f572ce3b9ef85b0d8010e203ffca4a10fb769a7a0463c32552e AS build
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 WORKDIR /src
