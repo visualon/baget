@@ -20,13 +20,19 @@ jobs:
           dotnet-version: 3.1.x
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: |
+          dotnet restore
+          cd src/BaGet.UI && npm ci
 
       - name: Build
         run: dotnet build --no-restore
 
-      - name: Test
+      - name: Test (backend)
         run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
+
+      - name: Test (frontend)
+        run: npm test -- --coverage
+        working-directory: src/BaGet.UI
 
       - name: Codecov
         continue-on-error: true
