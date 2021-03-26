@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:3.1.13@sha256:3f1d71a4d04bb9f3c992c9432599a03881d042969cbf38dfcbc88ea1d9ad191d AS base
+FROM mcr.microsoft.com/dotnet/aspnet:3.1.13@sha256:a5117c5a4767aa296546f4bbd50cd1385660e8e724fabb356cc72b36a401236e AS base
 WORKDIR /app
 EXPOSE 80
 
