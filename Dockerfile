@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:3.1.15@sha256:b266cef5efbc93575c5f126beb6cfb4ac006d80d1ebf34b131aa8df3d2e59627 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:3.1.15@sha256:1083a55ced614a1627ace0c2e9dec9c458b2b06968cf81b3e33888e373e8d103 AS base
 WORKDIR /app
 EXPOSE 80
 
@@ -8,7 +8,7 @@ LABEL maintainer="Michael Kriese <michael.kriese@visualon.de>" \
   org.opencontainers.image.source="https://github.com/visualon/baget" \
   org.opencontainers.image.url="https://github.com/visualon/baget"
 
-FROM mcr.microsoft.com/dotnet/sdk:3.1.409@sha256:56f033c5b1691f77f8875115e38007696e7205c8a19cf61304a94f60aed9d9d1 AS build
+FROM mcr.microsoft.com/dotnet/sdk:3.1.409@sha256:fafbc376052f030866e58aed7d806cfe67e5d181114067981aa0df8c9aa3aa41 AS build
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 WORKDIR /src
