@@ -8,7 +8,7 @@ LABEL maintainer="Michael Kriese <michael.kriese@visualon.de>" \
   org.opencontainers.image.source="https://github.com/visualon/baget" \
   org.opencontainers.image.url="https://github.com/visualon/baget"
 
-FROM mcr.microsoft.com/dotnet/sdk:3.1.409@sha256:d0f16b02f28b1e45e0b9d0435facc57ecc3aae740ecc0b8a3a22c5f526a37c56 AS build
+FROM mcr.microsoft.com/dotnet/sdk:3.1.409@sha256:a039c6cfc73b0ce9db2431e8685cf5521a3fc9dbec65d4b4f8ee79ad4108641f AS build
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 WORKDIR /src
