@@ -2,7 +2,7 @@ version: "1"
 # https://github.com/wei/pull#advanced-usage
 rules:
   - base: main
-    upstream: loic-sharma:master
+    upstream: loic-sharma:main
     mergeMethod: squash
     mergeUnstable: false
     assignees:
