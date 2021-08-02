@@ -35,8 +35,8 @@ jobs:
         working-directory: src/BaGet.UI
 
       - name: Codecov
-        continue-on-error: true
-        run: bash <(curl -s https://codecov.io/bash)
+        uses: codecov/codecov-action@51d810878be5422784e86451c0e7c14e5860ec47 # renovate: tag=v2.0.2
+        if: always()
 
   build:
     needs: [test]
@@ -60,7 +60,7 @@ jobs:
 
       - name: Log into registry
         if: github.ref == 'refs/heads/main'
-        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
 
       - name: Publish the Docker image
         if: github.ref == 'refs/heads/main'
