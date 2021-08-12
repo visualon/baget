@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.S3" Version="3.7.1.22" />
-    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.1.40" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.1.23" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.1.41" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="$(MicrosoftExtensionsPackageVersion)" />
   </ItemGroup>
 
