@@ -51,7 +51,7 @@ jobs:
       - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2.3.4
 
       - name: docker-config
-        uses: renovatebot/internal-tools@397bb2d4b0030eb4dd63b0f84780cfd5d24d6649 # renovate: tag=v1.8.8
+        uses: renovatebot/internal-tools@1cbe51e600e8b8a02bef5a46a5f9e31d93ae57b4 # renovate: tag=v1.8.9
         with:
           command: docker-config
 
